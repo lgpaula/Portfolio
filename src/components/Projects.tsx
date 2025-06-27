@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ExternalLink, Github, Eye, Calendar, Tag, Star, GitFork, Clock } from 'lucide-react';
 import { useGitHubData } from '../hooks/useGitHubData';
 import { determineProjectCategory, extractTechStack, getProjectImage } from '../utils/projectsMapping';
