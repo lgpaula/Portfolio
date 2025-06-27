@@ -6,7 +6,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const texts = ['Software Engineer', 'Full-Stack Developer', 'Problem Solver', 'Tech Enthusiast'];
+  const texts = ['Software Engineer', 'Problem Solver', 'Tech Enthusiast'];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -82,7 +82,7 @@ const Hero = () => {
             
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/lgpaula"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 hover:scale-110"
@@ -90,7 +90,7 @@ const Hero = () => {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/lucasgdepaula/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 hover:scale-110"
@@ -98,7 +98,7 @@ const Hero = () => {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="mailto:alex@example.com"
+                href="mailto:lucasgdepaula@hotmail.com"
                 className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 hover:scale-110"
               >
                 <Mail className="w-6 h-6" />
