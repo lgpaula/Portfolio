@@ -116,9 +116,6 @@ const Projects = () => {
             Featured Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            A showcase of my most impactful projects, demonstrating expertise across different technologies and domains.
-          </p>
         </div>
 
         {/* Main Project Display */}
