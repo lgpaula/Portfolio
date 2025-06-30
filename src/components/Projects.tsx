@@ -1,51 +1,67 @@
 import { useState, useEffect } from 'react';
-import { Github, Eye, Calendar, Tag, Star, GitFork, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useGitHubData } from '../hooks/useGitHubData';
-import { determineProjectCategory, extractTechStack, getProjectImage } from '../utils/projectsMapping';
+import { Github, Calendar, Tag, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   
-  // Replace 'your-github-username' with your actual GitHub username
-  const githubUsername = 'lgpaula'; // Change this to your GitHub username
-  const { featuredRepos, isLoading, error } = useGitHubData(githubUsername);
-
-  // Process GitHub repos into project format
-  const processedProjects = featuredRepos.map(repo => {
-    const languages = (repo as any).detailedLanguages || {};
-    const techStack = extractTechStack(languages);
-    const category = determineProjectCategory(languages, repo.topics);
-    const image = getProjectImage(category, techStack);
-    
-    return {
-      id: repo.id,
-      title: repo.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-      description: repo.description || 'A project built with modern technologies and best practices.',
-      image,
-      technologies: techStack.length > 0 ? techStack : [repo.language].filter(Boolean),
-      category,
-      githubUrl: repo.html_url,
-      liveUrl: repo.homepage || repo.html_url,
-      date: new Date(repo.created_at).getFullYear().toString(),
-      stars: repo.stargazers_count,
-      forks: repo.forks_count,
-      lastUpdated: repo.updated_at,
-      topics: repo.topics || []
-    };
-  });
+  // Manual project data - you can customize these
+  const projects = [
+    {
+      id: 1,
+      title: 'E-Commerce Dashboard',
+      description: 'A comprehensive admin dashboard for managing e-commerce operations. Features real-time analytics, inventory management, order processing, and customer insights. Built with modern React patterns and optimized for performance.',
+      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
+      category: 'Full Stack',
+      githubUrl: 'https://github.com/yourusername/ecommerce-dashboard',
+      liveUrl: 'https://ecommerce-dashboard-demo.vercel.app',
+      date: '2024',
+      stars: 42,
+      lastUpdated: '2024-01-15T10:30:00Z',
+      topics: ['dashboard', 'ecommerce', 'analytics', 'admin-panel', 'react']
+    },
+    {
+      id: 2,
+      title: 'Task Management App',
+      description: 'A collaborative task management application with real-time updates, team collaboration features, and advanced project tracking. Includes drag-and-drop functionality, deadline management, and progress visualization.',
+      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600',
+      technologies: ['Vue.js', 'Express.js', 'MongoDB', 'Socket.io', 'Docker'],
+      category: 'Web Application',
+      githubUrl: 'https://github.com/yourusername/task-manager',
+      liveUrl: 'https://task-manager-demo.netlify.app',
+      date: '2023',
+      stars: 28,
+      lastUpdated: '2023-12-20T14:45:00Z',
+      topics: ['productivity', 'collaboration', 'real-time', 'vue', 'task-management']
+    },
+    {
+      id: 3,
+      title: 'Weather Analytics Platform',
+      description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
+      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
+      category: 'Data Platform',
+      githubUrl: 'https://github.com/yourusername/weather-analytics',
+      liveUrl: 'https://weather-analytics-demo.herokuapp.com',
+      date: '2023',
+      stars: 67,
+      lastUpdated: '2024-01-08T09:15:00Z',
+      topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
+    }
+  ];
 
   // Auto-play carousel
   useEffect(() => {
-    if (!isAutoPlaying || processedProjects.length === 0) return;
+    if (!isAutoPlaying || projects.length === 0) return;
 
     const interval = setInterval(() => {
-      handleSlideChange((prev) => (prev + 1) % processedProjects.length);
-    }, 5000);
+      handleSlideChange((prev) => (prev + 1) % projects.length);
+    }, 8000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, processedProjects.length]);
+  }, [isAutoPlaying, projects.length]);
 
   const handleSlideChange = (newSlideOrFunction: number | ((prev: number) => number)) => {
     if (isTransitioning) return;
@@ -66,13 +82,13 @@ const Projects = () => {
   };
 
   const nextSlide = () => {
-    const newSlide = (currentSlide + 1) % processedProjects.length;
+    const newSlide = (currentSlide + 1) % projects.length;
     handleSlideChange(newSlide);
     setIsAutoPlaying(false);
   };
 
   const prevSlide = () => {
-    const newSlide = (currentSlide - 1 + processedProjects.length) % processedProjects.length;
+    const newSlide = (currentSlide - 1 + projects.length) % projects.length;
     handleSlideChange(newSlide);
     setIsAutoPlaying(false);
   };
@@ -90,69 +106,7 @@ const Projects = () => {
     });
   };
 
-  if (isLoading) {
-    return (
-      <section id="projects" className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Featured Projects
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
-          </div>
-          <div className="text-center py-12">
-            <div className="inline-flex items-center gap-2 text-blue-400">
-              <div className="w-5 h-5 border-2 border-blue-400/30 border-t-blue-400 rounded-full animate-spin"></div>
-              Loading projects from GitHub...
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="projects" className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Featured Projects
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
-          </div>
-          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-8 text-center">
-            <p className="text-red-400">
-              {error.includes('username') 
-                ? 'Please update your GitHub username in the Projects component to see your repositories.'
-                : `Error loading GitHub projects: ${error}`
-              }
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (processedProjects.length === 0) {
-    return (
-      <section id="projects" className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Featured Projects
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
-          </div>
-          <div className="text-center py-12 text-gray-400">
-            No projects found. Make sure your GitHub repositories are public.
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  const currentProject = processedProjects[currentSlide];
+  const currentProject = projects[currentSlide];
 
   return (
     <section id="projects" className="py-20 bg-gray-900 overflow-hidden">
@@ -163,7 +117,7 @@ const Projects = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            My latest and most impactful projects, automatically curated from my GitHub repositories.
+            A showcase of my most impactful projects, demonstrating expertise across different technologies and domains.
           </p>
         </div>
 
@@ -195,28 +149,12 @@ const Projects = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-gray-900/60"></div>
-                  
-                  {/* Project Stats Overlay */}
-                  <div className="absolute top-6 left-6 flex gap-3">
-                    {currentProject.stars > 0 && (
-                      <div className="flex items-center gap-1 bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full text-yellow-400 text-sm font-medium border border-yellow-400/20">
-                        <Star className="w-4 h-4" />
-                        {currentProject.stars}
-                      </div>
-                    )}
-                    {currentProject.forks > 0 && (
-                      <div className="flex items-center gap-1 bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full text-blue-400 text-sm font-medium border border-blue-400/20">
-                        <GitFork className="w-4 h-4" />
-                        {currentProject.forks}
-                      </div>
-                    )}
-                  </div>
 
                   {/* Category Badge */}
                   <div className="absolute top-6 right-6">
                     <div className="flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-500/40 px-4 py-2 rounded-full text-blue-300 text-sm font-medium">
                       <Tag className="w-4 h-4" />
-                      {currentProject.category.charAt(0).toUpperCase() + currentProject.category.slice(1)}
+                      {currentProject.category}
                     </div>
                   </div>
 
@@ -310,17 +248,6 @@ const Projects = () => {
                         <Github className="w-5 h-5" />
                         View Code
                       </a>
-                      {currentProject.liveUrl && currentProject.liveUrl !== currentProject.githubUrl && (
-                        <a
-                          href={currentProject.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-3 hover:scale-105 hover:shadow-xl"
-                        >
-                          <Eye className="w-5 h-5" />
-                          Live Demo
-                        </a>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -344,7 +271,7 @@ const Projects = () => {
           {/* Carousel Indicators */}
           <div className="flex justify-center items-center gap-4">
             <div className="flex gap-3">
-              {processedProjects.map((_, index) => (
+              {projects.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
@@ -375,7 +302,7 @@ const Projects = () => {
           {/* Project Counter */}
           <div className="text-center">
             <span className="text-gray-400 text-lg font-medium">
-              Project {currentSlide + 1} of {processedProjects.length}
+              Project {currentSlide + 1} of {projects.length}
             </span>
           </div>
         </div>
