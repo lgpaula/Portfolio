@@ -92,7 +92,7 @@ const Projects = () => {
 
   if (isLoading) {
     return (
-      <section id="projects" className="py-20 bg-gray-800">
+      <section id="projects" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -113,7 +113,7 @@ const Projects = () => {
 
   if (error) {
     return (
-      <section id="projects" className="py-20 bg-gray-800">
+      <section id="projects" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -136,7 +136,7 @@ const Projects = () => {
 
   if (processedProjects.length === 0) {
     return (
-      <section id="projects" className="py-20 bg-gray-800">
+      <section id="projects" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -155,7 +155,7 @@ const Projects = () => {
   const currentProject = processedProjects[currentSlide];
 
   return (
-    <section id="projects" className="py-20 bg-gray-800 overflow-hidden">
+    <section id="projects" className="py-20 bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -174,7 +174,7 @@ const Projects = () => {
           <button
             onClick={prevSlide}
             disabled={isTransitioning}
-            className="hidden lg:flex items-center justify-center w-16 h-16 bg-gray-900 hover:bg-gray-800 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 z-10"
+            className="hidden lg:flex items-center justify-center w-16 h-16 bg-gray-800 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 z-10"
             aria-label="Previous project"
           >
             <ChevronLeft className="w-8 h-8" />
@@ -187,7 +187,7 @@ const Projects = () => {
             }`}>
               
               {/* Left Card - Project Image */}
-              <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+              <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
                 <div className="relative h-96 lg:h-[500px] overflow-hidden">
                   <img
                     src={currentProject.image}
@@ -199,13 +199,13 @@ const Projects = () => {
                   {/* Project Stats Overlay */}
                   <div className="absolute top-6 left-6 flex gap-3">
                     {currentProject.stars > 0 && (
-                      <div className="flex items-center gap-1 bg-gray-900/90 backdrop-blur-sm px-4 py-2 rounded-full text-yellow-400 text-sm font-medium border border-yellow-400/20">
+                      <div className="flex items-center gap-1 bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full text-yellow-400 text-sm font-medium border border-yellow-400/20">
                         <Star className="w-4 h-4" />
                         {currentProject.stars}
                       </div>
                     )}
                     {currentProject.forks > 0 && (
-                      <div className="flex items-center gap-1 bg-gray-900/90 backdrop-blur-sm px-4 py-2 rounded-full text-blue-400 text-sm font-medium border border-blue-400/20">
+                      <div className="flex items-center gap-1 bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-full text-blue-400 text-sm font-medium border border-blue-400/20">
                         <GitFork className="w-4 h-4" />
                         {currentProject.forks}
                       </div>
@@ -224,7 +224,7 @@ const Projects = () => {
                   <button
                     onClick={prevSlide}
                     disabled={isTransitioning}
-                    className="lg:hidden absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-gray-900/80 hover:bg-gray-800 text-white rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="lg:hidden absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800/80 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     aria-label="Previous project"
                   >
                     <ChevronLeft className="w-6 h-6" />
@@ -232,7 +232,7 @@ const Projects = () => {
                   <button
                     onClick={nextSlide}
                     disabled={isTransitioning}
-                    className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-gray-900/80 hover:bg-gray-800 text-white rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800/80 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     aria-label="Next project"
                   >
                     <ChevronRight className="w-6 h-6" />
@@ -241,7 +241,7 @@ const Projects = () => {
               </div>
 
               {/* Right Card - Project Information */}
-              <div className="bg-gray-900 rounded-2xl shadow-2xl border border-gray-700 p-8 lg:p-12 flex flex-col justify-center">
+              <div className="bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 p-8 lg:p-12 flex flex-col justify-center">
                 <div className="space-y-8">
                   {/* Project Title and Description */}
                   <div>
@@ -332,7 +332,7 @@ const Projects = () => {
           <button
             onClick={nextSlide}
             disabled={isTransitioning}
-            className="hidden lg:flex items-center justify-center w-16 h-16 bg-gray-900 hover:bg-gray-800 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 z-10"
+            className="hidden lg:flex items-center justify-center w-16 h-16 bg-gray-800 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 z-10"
             aria-label="Next project"
           >
             <ChevronRight className="w-8 h-8" />
