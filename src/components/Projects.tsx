@@ -119,13 +119,13 @@ const Projects = () => {
         </div>
 
         {/* Main Project Display */}
-        <div className="relative flex items-center gap-8">
+        <div className="flex items-center gap-8">
           
           {/* Left Navigation Button */}
           <button
             onClick={prevSlide}
             disabled={isTransitioning}
-            className="hidden lg:flex items-center justify-center w-16 h-16 bg-gray-800 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 z-10"
+            className="hidden lg:flex absolute left-4 items-center justify-center w-16 h-16 bg-gray-800 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 z-10"
             aria-label="Previous project"
           >
             <ChevronLeft className="w-8 h-8" />
@@ -138,8 +138,7 @@ const Projects = () => {
             }`}>
               
               {/* Left Card - Project Image */}
-              <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-                <div className="relative h-96 lg:h-[500px] overflow-hidden">
+                <div className="self-center relative h-[500px] overflow-hidden rounded-2xl shadow-2xl border border-gray-700">
                   <img
                     src={currentProject.image}
                     alt={currentProject.title}
@@ -172,7 +171,6 @@ const Projects = () => {
                   >
                     <ChevronRight className="w-6 h-6" />
                   </button>
-                </div>
               </div>
 
               {/* Right Card - Project Information */}
@@ -256,7 +254,7 @@ const Projects = () => {
           <button
             onClick={nextSlide}
             disabled={isTransitioning}
-            className="hidden lg:flex items-center justify-center w-16 h-16 bg-gray-800 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 z-10"
+            className="hidden lg:flex absolute right-4 items-center justify-center w-16 h-16 bg-gray-800 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 z-10"
             aria-label="Next project"
           >
             <ChevronRight className="w-8 h-8" />
