@@ -85,12 +85,14 @@ const Hero = () => {
           </div>
         </div>
 
-        <button
-          onClick={scrollToAbout}
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-gray-400 hover:text-white transition-colors duration-300 animate-bounce"
-        >
-          <ChevronDown className="w-8 h-8" />
-        </button>
+        <div className="absolute bottom-4 inset-x-0 flex justify-center">
+          <button
+            onClick={scrollToAbout}
+            className="text-gray-400 hover:text-white transition-colors duration-300 animate-bounce"
+          >
+            <ChevronDown className="w-8 h-8" />
+          </button>
+        </div>
       </div>
     </section>
   );
