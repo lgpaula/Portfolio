@@ -10,7 +10,10 @@ const Hero = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      if (texts.length === 0) return;
+      
       const currentText = texts[currentIndex];
+      if (!currentText) return;
       
       if (!isDeleting) {
         if (displayText.length < currentText.length) {
@@ -68,7 +71,7 @@ const Hero = () => {
           </div>
 
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            I'm a software developer focused on building efficient, well-structured apps that work — that usually don’t catch fire. Clean code, practical design, and just enough caffeine.
+            I'm a software developer focused on building efficient, well-structured apps that work — that usually don't catch fire. Clean code, practical design, and just enough caffeine.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">

@@ -21,7 +21,7 @@ const About = () => {
               </p>
               
               <p className="leading-relaxed">
-                I’ve spent most of my time building local-first apps, scraping and structuring messy data, and figuring out how to make codebases scale without becoming a nightmare.
+                I've spent most of my time building local-first apps, scraping and structuring messy data, and figuring out how to make codebases scale without becoming a nightmare.
                 I'm driven by clarity, performance, and the occasional obsession with refactoring.
               </p>
               
