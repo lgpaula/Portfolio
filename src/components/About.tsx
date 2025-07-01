@@ -13,25 +13,21 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="prose prose-lg text-gray-300">
+            <div className="prose prose-lg text-gray-300 space-y-6">
               <p className="leading-relaxed">
-                I'm a passionate software engineer with over 5 years of experience building 
-                scalable web applications and leading development teams. My journey started 
-                with a Computer Science degree, but my real education came from countless 
-                hours of coding, debugging, and shipping products that users love.
+                I'm a software developer with 5+ years of experience, mainly in C++, but I like to get my hands dirty across the stack
+                — from backend services in Python and Java to Android apps and desktop UIs in C#.
+                I enjoy designing systems that are clean under the hood and practical to maintain.
               </p>
               
               <p className="leading-relaxed">
-                I thrive on turning complex problems into elegant solutions, whether it's 
-                architecting microservices, optimizing database queries, or crafting 
-                intuitive user interfaces. I believe great code is not just functional—it's 
-                readable, maintainable, and tells a story.
+                I’ve spent most of my time building local-first apps, scraping and structuring messy data, and figuring out how to make codebases scale without becoming a nightmare.
+                I'm driven by clarity, performance, and the occasional obsession with refactoring.
               </p>
               
               <p className="leading-relaxed">
-                When I'm not coding, you'll find me contributing to open source projects, 
-                mentoring junior developers, or exploring the latest technologies. I'm 
-                always eager to learn and share knowledge with the community.
+                Outside of work, I experiment with new tech, contribute to personal projects, and explore better ways to architect and automate things.
+                I'm always up for solving real problems with clean solutions — preferably with a hot drink nearby.
               </p>
             </div>
 
@@ -39,10 +35,13 @@ const About = () => {
               <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
                 Problem Solver
               </span>
-              <span className="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium">
-                Team Leader
+              <span className="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium">
+                Team Player
               </span>
-              <span className="px-4 py-2 bg-teal-500/20 text-teal-300 rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium">
+                Builder
+              </span>
+              <span className="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium">
                 Continuous Learner
               </span>
             </div>
