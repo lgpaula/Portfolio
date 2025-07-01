@@ -16,9 +16,7 @@ const Projects = () => {
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
       category: 'Full Stack',
       githubUrl: 'https://github.com/yourusername/ecommerce-dashboard',
-      liveUrl: 'https://ecommerce-dashboard-demo.vercel.app',
       date: '2024',
-      stars: 42,
       lastUpdated: '2024-01-15T10:30:00Z',
       topics: ['dashboard', 'ecommerce', 'analytics', 'admin-panel', 'react']
     },
@@ -30,9 +28,7 @@ const Projects = () => {
       technologies: ['Vue.js', 'Express.js', 'MongoDB', 'Socket.io', 'Docker'],
       category: 'Web Application',
       githubUrl: 'https://github.com/yourusername/task-manager',
-      liveUrl: 'https://task-manager-demo.netlify.app',
       date: '2023',
-      stars: 28,
       lastUpdated: '2023-12-20T14:45:00Z',
       topics: ['productivity', 'collaboration', 'real-time', 'vue', 'task-management']
     },
@@ -44,9 +40,7 @@ const Projects = () => {
       technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
       category: 'Data Platform',
       githubUrl: 'https://github.com/yourusername/weather-analytics',
-      liveUrl: 'https://weather-analytics-demo.herokuapp.com',
       date: '2023',
-      stars: 67,
       lastUpdated: '2024-01-08T09:15:00Z',
       topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
     }
