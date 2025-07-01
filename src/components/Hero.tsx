@@ -78,31 +78,6 @@ const Hero = () => {
                 <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
               </span>
             </button>
-            
-            <div className="flex items-center gap-4">
-              <a
-                href="https://github.com/lgpaula"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 hover:scale-110"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/lucasgdepaula/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 hover:scale-110"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="mailto:lucasgdepaula@hotmail.com"
-                className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-300 hover:scale-110"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
-            </div>
           </div>
         </div>
 

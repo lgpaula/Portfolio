@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Quote } from 'lucide-react';
+import { Github, Linkedin, Quote, Mail } from 'lucide-react';
 
 const Contact = () => {
   const [currentQuote, setCurrentQuote] = useState(0);
@@ -94,6 +94,12 @@ const Contact = () => {
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/lucasgdepaula/',
       color: 'hover:text-blue-400'
+    },
+    {
+      icon: <Mail className='w-6 h-6' />,
+      label: 'Mail',
+      href: 'mailto:lucasgdepaula@hotmail.com',
+      color: 'hover:text-gray-300'
     }
   ];
 
