@@ -1,4 +1,4 @@
-import { Heart, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -12,14 +12,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 text-gray-400 mb-4 md:mb-0">
-            <span>© {currentYear} Lucas de Paula. Made with</span>
-            <Heart className="w-4 h-4 text-red-400 fill-current" />
-            <span>and lots of coffee.</span>
+            <span>© {currentYear} Lucas de Paula</span>
           </div>
 
           <div className="flex items-center gap-6">
             <div className="text-gray-400 text-sm">
-              Built with React, TypeScript & Tailwind CSS
+              Vibecoded using React, TypeScript & Tailwind CSS
             </div>
             
             <button
