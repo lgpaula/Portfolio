@@ -68,8 +68,7 @@ const Hero = () => {
           </div>
 
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Passionate about creating innovative solutions and building exceptional digital experiences. 
-            I specialize in full-stack development with modern technologies.
+            I'm a software developer focused on building efficient, well-structured apps that work — that usually don’t catch fire. Clean code, practical design, and just enough caffeine.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
