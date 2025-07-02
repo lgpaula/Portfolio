@@ -10,69 +10,65 @@ const Projects = () => {
     {
       id: 1,
       title: 'FireAI',
-      description: 'A comprehensive admin dashboard for managing e-commerce operations. Features real-time analytics, inventory management, order processing, and customer insights. Built with modern React patterns and optimized for performance.',
+      description: `A drone-based firefighter assistance tool designed to transform wildfire management. FireAI enables real-time fire detection and mapping, allowing for rapid, informed decision-making in critical scenarios.
+I developed the autonomous mission backend for drones equipped with DJI M300 and NVIDIA Jetson, achieving early fire detection with over 90% accuracy across diverse terrains.`,
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
-      category: 'Full Stack',
-      githubUrl: 'https://github.com/yourusername/ecommerce-dashboard',
-      isOpenSource: false,
-      topics: ['dashboard', 'ecommerce', 'analytics', 'admin-panel', 'react']
+      technologies: ['C++', 'Ubuntu', 'Git'],
+      category: 'Backend',
+      githubUrl: '',
+      isOpenSource: false
     },
     {
       id: 2,
       title: 'Omnisight',
-      description: 'A collaborative task management application with real-time updates, team collaboration features, and advanced project tracking. Includes drag-and-drop functionality, deadline management, and progress visualization.',
+      description: `Aerial search-and-rescue system leveraging drones to detect and locate people in real time from altitudes over 100 meters. The project emphasized autonomous navigation, terrain-aware flight, and AI-driven object recognition.
+I created embedded modules for autonomous drone navigation and integrated feedback from real-world operators including GRAF firefighters and WWF personnel.`,
       image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Vue.js', 'Express.js', 'MongoDB', 'Socket.io', 'Docker'],
-      category: 'Web Application',
-      githubUrl: 'https://github.com/yourusername/task-manager',
-      isOpenSource: false,
-      topics: ['productivity', 'collaboration', 'real-time', 'vue', 'task-management']
+      technologies: ['C++', 'Ubuntu', 'Git'],
+      category: 'Backend',
+      githubUrl: '',
+      isOpenSource: false
     },
     {
       id: 3,
       title: 'Android Ground Control App',
-      description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
+      description: `An Android application used as the ground control interface for both FireAI and OmniSight. The app handles communication with the drone, displays real-time telemetry, and allows direct control.
+I contributed to UI design and regularly shipped quality-of-life updates based on feedback from field operators.`,
       image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
-      category: 'Data Platform',
-      githubUrl: 'https://github.com/yourusername/weather-analytics',
-      isOpenSource: true,
-      topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
+      technologies: ['Java', 'Mobile', 'Android', 'Git'],
+      category: 'Mobile Application',
+      githubUrl: '',
+      isOpenSource: true
     },
     {
       id: 4,
       title: 'CineLog',
-      description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
+      description: `A personal desktop app for tracking and organizing movies and TV shows. It features API integration, a custom backend/frontend architecture, and a scraper to gather metadata from the web. Built to be fully cross-platform and extensible.`,
       image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
-      category: 'Data Platform',
-      githubUrl: 'https://github.com/yourusername/weather-analytics',
-      isOpenSource: true,
-      topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
+      technologies: ['C#', 'Python', 'Avalonia', 'SQLite', 'Flask', 'Cross-Platform'],
+      category: 'Fullstack Desktop Application',
+      githubUrl: 'https://github.com/lgpaula/CineLogUI',
+      isOpenSource: true
     },
     {
       id: 5,
       title: 'BuffSnake',
-      description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
+      description: 'A modern take on the classic Snake game, featuring singleplayer and local multiplayer, with planned support for LAN multiplayer. The project showcases modular design, clean architecture, and strong OOP principles.',
       image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
-      category: 'Data Platform',
-      githubUrl: 'https://github.com/yourusername/weather-analytics',
-      isOpenSource: true,
-      topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
+      technologies: ['C++', 'OpenCV', 'Multiplayer LAN', 'Fedora'],
+      category: 'Desktop Game',
+      githubUrl: 'https://github.com/lgpaula/BuffSnake',
+      isOpenSource: true
     },
     {
       id: 6,
       title: 'Touchpad Volume Control',
-      description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
+      description: `A minimalist utility for controlling system volume using touchpad gestures on Fedora-based laptops. Lightweight and efficient, this tool adds gesture-based control for improved ergonomics and usability.`,
       image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
-      category: 'Data Platform',
-      githubUrl: 'https://github.com/yourusername/weather-analytics',
-      lastUpdated: '2024-01-08T09:15:00Z',
-      isOpenSource: true,
-      topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
+      technologies: ['Fedora', 'Git'],
+      category: 'Desktop Utility',
+      githubUrl: 'https://github.com/lgpaula/TouchpadVolumeControl',
+      isOpenSource: true
     }
   ];
 
@@ -202,26 +198,8 @@ const Projects = () => {
                     </p>
                   </div>
 
-                  {/* Topics */}
-                  {currentProject.topics.length > 0 && (
-                    <div>
-                      <h4 className="text-white font-semibold mb-4">Project Tags:</h4>
-                      <div className="flex flex-wrap gap-3">
-                        {currentProject.topics.slice(0, 6).map((topic) => (
-                          <span
-                            key={topic}
-                            className="px-3 py-2 bg-purple-500/20 text-purple-300 text-sm rounded-full border border-purple-500/40 transition-all duration-300 hover:scale-105 hover:bg-purple-500/30"
-                          >
-                            {topic}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
                   {/* Technologies */}
                   <div>
-                    <h4 className="text-white font-semibold mb-4">Technologies Used:</h4>
                     <div className="flex flex-wrap gap-3">
                       {currentProject.technologies.map((tech) => (
                         <span
@@ -306,12 +284,6 @@ const Projects = () => {
             </button>
           </div>
 
-          {/* Project Counter */}
-          <div className="text-center">
-            <span className="text-gray-400 text-lg font-medium">
-              Project {currentSlide + 1} of {projects.length}
-            </span>
-          </div>
         </div>
       </div>
     </section>
