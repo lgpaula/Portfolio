@@ -107,7 +107,7 @@ const Contact = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuote((prev) => (prev + 1) % quotes.length);
-    }, 60000); // 60 seconds
+    }, 10000); // 10 seconds
 
     return () => clearInterval(interval);
   }, [quotes.length]);
