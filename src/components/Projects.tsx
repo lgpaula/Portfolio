@@ -1,47 +1,77 @@
 import { useState, useEffect } from 'react';
-import { Github, Calendar, Tag, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Github, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  
-  // Manual project data - you can customize these
+
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Dashboard',
+      title: 'FireAI',
       description: 'A comprehensive admin dashboard for managing e-commerce operations. Features real-time analytics, inventory management, order processing, and customer insights. Built with modern React patterns and optimized for performance.',
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
       category: 'Full Stack',
       githubUrl: 'https://github.com/yourusername/ecommerce-dashboard',
-      date: '2024',
-      lastUpdated: '2024-01-15T10:30:00Z',
+      isOpenSource: false,
       topics: ['dashboard', 'ecommerce', 'analytics', 'admin-panel', 'react']
     },
     {
       id: 2,
-      title: 'Task Management App',
+      title: 'Omnisight',
       description: 'A collaborative task management application with real-time updates, team collaboration features, and advanced project tracking. Includes drag-and-drop functionality, deadline management, and progress visualization.',
       image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600',
       technologies: ['Vue.js', 'Express.js', 'MongoDB', 'Socket.io', 'Docker'],
       category: 'Web Application',
       githubUrl: 'https://github.com/yourusername/task-manager',
-      date: '2023',
-      lastUpdated: '2023-12-20T14:45:00Z',
+      isOpenSource: false,
       topics: ['productivity', 'collaboration', 'real-time', 'vue', 'task-management']
     },
     {
       id: 3,
-      title: 'Weather Analytics Platform',
+      title: 'Android Ground Control App',
       description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
       image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
       technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
       category: 'Data Platform',
       githubUrl: 'https://github.com/yourusername/weather-analytics',
-      date: '2023',
+      isOpenSource: true,
+      topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
+    },
+    {
+      id: 4,
+      title: 'CineLog',
+      description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
+      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
+      category: 'Data Platform',
+      githubUrl: 'https://github.com/yourusername/weather-analytics',
+      isOpenSource: true,
+      topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
+    },
+    {
+      id: 5,
+      title: 'BuffSnake',
+      description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
+      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
+      category: 'Data Platform',
+      githubUrl: 'https://github.com/yourusername/weather-analytics',
+      isOpenSource: true,
+      topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
+    },
+    {
+      id: 6,
+      title: 'Touchpad Volume Control',
+      description: 'An advanced weather analytics platform that aggregates data from multiple sources to provide detailed weather insights, forecasting, and climate analysis. Features interactive charts and customizable alerts.',
+      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+      technologies: ['Python', 'FastAPI', 'React', 'D3.js', 'AWS'],
+      category: 'Data Platform',
+      githubUrl: 'https://github.com/yourusername/weather-analytics',
       lastUpdated: '2024-01-08T09:15:00Z',
+      isOpenSource: true,
       topics: ['weather', 'analytics', 'data-visualization', 'api', 'machine-learning']
     }
   ];
@@ -59,16 +89,16 @@ const Projects = () => {
 
   const handleSlideChange = (newSlideOrFunction: number | ((prev: number) => number)) => {
     if (isTransitioning) return;
-    
+
     setIsTransitioning(true);
-    
+
     setTimeout(() => {
       if (typeof newSlideOrFunction === 'function') {
         setCurrentSlide(newSlideOrFunction);
       } else {
         setCurrentSlide(newSlideOrFunction);
       }
-      
+
       setTimeout(() => {
         setIsTransitioning(false);
       }, 50);
@@ -93,13 +123,6 @@ const Projects = () => {
     setIsAutoPlaying(false);
   };
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'short' 
-    });
-  };
-
   const currentProject = projects[currentSlide];
 
   return (
@@ -114,7 +137,7 @@ const Projects = () => {
 
         {/* Main Project Display */}
         <div className="flex items-center gap-8">
-          
+
           {/* Left Navigation Button */}
           <button
             onClick={prevSlide}
@@ -127,44 +150,43 @@ const Projects = () => {
 
           {/* Project Cards Container */}
           <div className="flex-1">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 transition-all duration-500 ease-in-out ${
-              isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-            }`}>
-              
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+              }`}>
+
               {/* Left Card - Project Image */}
-                <div className="self-center relative h-[500px] overflow-hidden rounded-2xl shadow-2xl border border-gray-700">
-                  <img
-                    src={currentProject.image}
-                    alt={currentProject.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-gray-900/60"></div>
+              <div className="self-center relative h-[500px] overflow-hidden rounded-2xl shadow-2xl border border-gray-700">
+                <img
+                  src={currentProject.image}
+                  alt={currentProject.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-gray-900/60"></div>
 
-                  {/* Category Badge */}
-                  <div className="absolute top-6 right-6">
-                    <div className="flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-500/40 px-4 py-2 rounded-full text-blue-300 text-sm font-medium">
-                      <Tag className="w-4 h-4" />
-                      {currentProject.category}
-                    </div>
+                {/* Category Badge */}
+                <div className="absolute top-6 right-6">
+                  <div className="flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-500/40 px-4 py-2 rounded-full text-blue-300 text-sm font-medium">
+                    <Tag className="w-4 h-4" />
+                    {currentProject.category}
                   </div>
+                </div>
 
-                  {/* Mobile Navigation Arrows (only visible on mobile) */}
-                  <button
-                    onClick={prevSlide}
-                    disabled={isTransitioning}
-                    className="lg:hidden absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800/80 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-                    aria-label="Previous project"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={nextSlide}
-                    disabled={isTransitioning}
-                    className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800/80 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-                    aria-label="Next project"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
+                {/* Mobile Navigation Arrows (only visible on mobile) */}
+                <button
+                  onClick={prevSlide}
+                  disabled={isTransitioning}
+                  className="lg:hidden absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800/80 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  aria-label="Previous project"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  disabled={isTransitioning}
+                  className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800/80 hover:bg-gray-900 text-white rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  aria-label="Next project"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
               </div>
 
               {/* Right Card - Project Information */}
@@ -214,29 +236,27 @@ const Projects = () => {
 
                   {/* Project Meta and Actions */}
                   <div className="space-y-6 pt-6 border-t border-gray-700">
-                    {/* Project Meta */}
-                    <div className="flex flex-wrap items-center gap-6 text-gray-400 text-sm">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        <span className="font-medium">Created {currentProject.date}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
-                        <span className="font-medium">Updated {formatDate(currentProject.lastUpdated)}</span>
-                      </div>
-                    </div>
-
                     {/* Action Buttons */}
                     <div className="flex flex-wrap gap-4">
-                      <a
-                        href={currentProject.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-3 hover:scale-105 hover:shadow-lg border border-gray-600 hover:border-gray-500"
-                      >
-                        <Github className="w-5 h-5" />
-                        View Code
-                      </a>
+                      {currentProject.isOpenSource ? (
+                        <a
+                          href={currentProject.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-3 hover:scale-105 hover:shadow-lg border border-gray-600 hover:border-gray-500"
+                        >
+                          <Github className="w-5 h-5" />
+                          View Code
+                        </a>
+                      ) : (
+                        <button
+                          disabled
+                          className="bg-gray-800 text-gray-400 px-6 py-3 rounded-lg font-semibold flex items-center gap-3 border border-gray-700 cursor-not-allowed"
+                        >
+                          <Github className="w-5 h-5 opacity-50" />
+                          Closed Source
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -265,24 +285,22 @@ const Projects = () => {
                   key={index}
                   onClick={() => goToSlide(index)}
                   disabled={isTransitioning}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 disabled:cursor-not-allowed border-2 ${
-                    index === currentSlide
+                  className={`w-4 h-4 rounded-full transition-all duration-300 disabled:cursor-not-allowed border-2 ${index === currentSlide
                       ? 'bg-blue-500 border-blue-400 scale-125 shadow-lg shadow-blue-500/50'
                       : 'bg-transparent border-gray-600 hover:border-gray-400 hover:scale-110'
-                  }`}
+                    }`}
                   aria-label={`Go to project ${index + 1}`}
                 />
               ))}
             </div>
-            
+
             {/* Auto-play toggle */}
             <button
               onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className={`ml-6 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 border ${
-                isAutoPlaying
+              className={`ml-6 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 border ${isAutoPlaying
                   ? 'bg-blue-500/20 text-blue-300 border-blue-500/40 shadow-lg shadow-blue-500/25'
                   : 'bg-gray-700 text-gray-400 border-gray-600 hover:bg-gray-600 hover:border-gray-500'
-              }`}
+                }`}
             >
               {isAutoPlaying ? 'Auto Playing' : 'Manual Mode'}
             </button>
