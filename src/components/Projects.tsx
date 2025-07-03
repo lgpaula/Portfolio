@@ -89,11 +89,7 @@ I contributed to UI design and regularly shipped quality-of-life updates based o
     setIsTransitioning(true);
 
     setTimeout(() => {
-      if (typeof newSlideOrFunction === 'function') {
-        setCurrentSlide(newSlideOrFunction);
-      } else {
-        setCurrentSlide(newSlideOrFunction);
-      }
+      setCurrentSlide(newSlideOrFunction);
 
       setTimeout(() => {
         setIsTransitioning(false);
