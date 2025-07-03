@@ -12,7 +12,7 @@ const Projects = () => {
       title: 'FireAI',
       description: `A drone-based firefighter assistance tool designed to transform wildfire management. FireAI enables real-time fire detection and mapping, allowing for rapid, informed decision-making in critical scenarios.
 I developed the autonomous mission backend for drones equipped with DJI M300 and NVIDIA Jetson, achieving early fire detection with over 90% accuracy across diverse terrains.`,
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'fireai.png',
       technologies: ['C++', 'Ubuntu', 'Git'],
       category: 'Backend',
       githubUrl: '',
@@ -23,7 +23,7 @@ I developed the autonomous mission backend for drones equipped with DJI M300 and
       title: 'Omnisight',
       description: `Aerial search-and-rescue system leveraging drones to detect and locate people in real time from altitudes over 100 meters. The project emphasized autonomous navigation, terrain-aware flight, and AI-driven object recognition.
 I created embedded modules for autonomous drone navigation and integrated feedback from real-world operators including GRAF firefighters and WWF personnel.`,
-      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'omnisight.png',
       technologies: ['C++', 'Ubuntu', 'Git'],
       category: 'Backend',
       githubUrl: '',
@@ -34,18 +34,18 @@ I created embedded modules for autonomous drone navigation and integrated feedba
       title: 'Android Ground Control App',
       description: `An Android application used as the ground control interface for both FireAI and OmniSight. The app handles communication with the drone, displays real-time telemetry, and allows direct control.
 I contributed to UI design and regularly shipped quality-of-life updates based on feedback from field operators.`,
-      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'fireai.png',
       technologies: ['Java', 'Mobile', 'Android', 'Git'],
       category: 'Mobile Application',
       githubUrl: '',
-      isOpenSource: true
+      isOpenSource: false
     },
     {
       id: 4,
       title: 'CineLog',
       description: `A personal desktop app for tracking and organizing movies and TV shows. It features API integration, a custom backend/frontend architecture, and a scraper to gather metadata from the web. Built to be fully cross-platform and extensible.`,
-      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['C#', 'Python', 'Avalonia', 'SQLite', 'Flask', 'Cross-Platform'],
+      image: 'cinelog.png',
+      technologies: ['C#', 'Python', 'Avalonia', 'SQLite', 'Flask', 'Cross-Platform', 'REST API'],
       category: 'Fullstack Desktop Application',
       githubUrl: 'https://github.com/lgpaula/CineLogUI',
       isOpenSource: true
@@ -54,7 +54,7 @@ I contributed to UI design and regularly shipped quality-of-life updates based o
       id: 5,
       title: 'BuffSnake',
       description: 'A modern take on the classic Snake game, featuring singleplayer and local multiplayer, with planned support for LAN multiplayer. The project showcases modular design, clean architecture, and strong OOP principles.',
-      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'snake.png',
       technologies: ['C++', 'OpenCV', 'Multiplayer LAN', 'Fedora'],
       category: 'Desktop Game',
       githubUrl: 'https://github.com/lgpaula/BuffSnake',
@@ -64,7 +64,7 @@ I contributed to UI design and regularly shipped quality-of-life updates based o
       id: 6,
       title: 'Touchpad Volume Control',
       description: `A minimalist utility for controlling system volume using touchpad gestures on Fedora-based laptops. Lightweight and efficient, this tool adds gesture-based control for improved ergonomics and usability.`,
-      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: 'touchpad.png',
       technologies: ['Fedora', 'Git'],
       category: 'Desktop Utility',
       githubUrl: 'https://github.com/lgpaula/TouchpadVolumeControl',
