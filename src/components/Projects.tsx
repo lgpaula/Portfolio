@@ -65,9 +65,19 @@ I contributed to UI design and regularly shipped quality-of-life updates based o
       title: 'Touchpad Volume Control',
       description: `A minimalist utility for controlling system volume using touchpad gestures on Fedora-based laptops. Lightweight and efficient, this tool adds gesture-based control for improved ergonomics and usability.`,
       image: 'touchpad.png',
-      technologies: ['Fedora', 'Git'],
+      technologies: ['C++', 'Fedora', 'Git'],
       category: 'Desktop Utility',
       githubUrl: 'https://github.com/lgpaula/TouchpadVolumeControl',
+      isOpenSource: true
+    },
+    {
+      id: 7,
+      title: 'Remote Touchpad',
+      description: 'An application that turns an Android device into a wireless touchpad for Linux desktops. It supports cursor controls, volume gestures and keyboard inputs through a lightweight, real-time protocol.',
+      image: 'remotetouchpad.png',
+      technologies: ['C++', 'Kotlin', 'Linux', 'Android'],
+      category: 'Mobile-Desktop Companion App',
+      githubUrl: 'https://github.com/lgpaula/RemoteTouchpad',
       isOpenSource: true
     }
   ];
